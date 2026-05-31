@@ -1,0 +1,16 @@
+- feature: 学科模块
+  story: 学科列表接口
+  title: 成功获取学科列表
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/education/subject/list
+  validate:
+    code: 1
+    message: 成功
+    response:
+      - id: 1
+        name: "语文"
+      - id: 2
+        name: "数学"
+      - id: 3
+        name: "英语"

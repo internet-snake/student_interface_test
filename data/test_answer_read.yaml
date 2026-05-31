@@ -1,0 +1,18 @@
+- feature: 答卷模块
+  story: 答卷查询接口
+  title: 成功查询答卷
+  request:
+    method: GET
+    url: http://localhost:8000/api/student/exampaper/answer/read/1
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 答卷模块
+  story: 答卷查询接口
+  title: 查询不存在的答卷
+  request:
+    method: GET
+    url: http://localhost:8000/api/student/exampaper/answer/read/99999
+  validate:
+    code: 500

@@ -1,0 +1,66 @@
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 成功提交试卷(部分答题)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 14
+      answerItems:
+        - questionId: 1
+          content: "A"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-空答案
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 10
+      answerItems: []
+      id: 1
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 成功提交试卷(全部答题-题目1正确)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 20
+      answerItems:
+        - questionId: 1
+          content: "A"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+        - questionId: 2
+          content: null
+          contentArray:
+            - "明"
+          completed: true
+          itemOrder: 2
+      id: 1
+  validate:
+    code: 1
+    message: 成功

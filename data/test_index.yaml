@@ -1,0 +1,17 @@
+- # 考试首页接口测试数据
+  feature: 首页模块
+  story: 首页接口
+  title: 成功进入首页
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/dashboard/index
+  validate:
+    code: 1
+    message: 成功
+    fixedPaper:
+      id: 1
+      name: "一年级语文单元测试"
+      limitStartTime: null
+      limitEndTime: null
+    timeLimitPaper: []
+    pushPaper: null

@@ -1,0 +1,7 @@
+INFO     test_student_login:conftest.py:43 ===============================开始执行学科列表测试================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+INFO     test_student_login:test_subject_list.py:32 前置登录成功
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/student/education/subject/list HTTP/1.1" 200 None
+INFO     test_student_login:test_subject_list.py:39 响应结果{'code': 1, 'message': '成功', 'response': [{'id': '1', 'name': '语文'}, {'id': '2', 'name': '数学'}]}
+INFO     test_student_login:test_subject_list.py:52 成功获取学科列表
+INFO     test_student_login:conftest.py:45 ================================学科列表测试完成================================================

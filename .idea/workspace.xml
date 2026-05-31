@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9d0c3b75-0ef9-4300-87e6-3145cdfc15d7" name="更改" comment="考试首页与注册测试完成">
+      <change afterPath="$PROJECT_DIR$/data/test_answer_read.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test_paper_pageList.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test_paper_select.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test_paper_submit.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test_student_task.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/test_subject_list.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_answer_read.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_paper_pageList.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_paper_select.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_paper_submit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_student_task.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_subject_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/student_test.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/student_test.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/10527555-96f4-44f2-9a42-42915dece36e-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/1c26bcf0-3a40-474b-a726-dc3c1de92827-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/1f1cc840-36c6-4480-9040-d421329dfb88-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/208af1d5-15c4-4eaa-9d6e-a2b0601bc74c-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/210f8f07-c4a2-412d-b0af-ebbb75a0a209-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/2238e441-1fce-4578-867c-4a19ecaf072a-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/22f34b1c-e823-4499-9c47-12bd0b5f8342-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/2779ca75-955d-41f9-999c-8e60ed431930-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/3be12672-4748-4e9b-b94c-7d538f624aca-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/45267c2d-bc3b-41aa-ba1e-30da73e3f6cc-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/5823ff74-3d6b-4190-b774-980fa1aeb726-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/5b945230-826b-45cf-809e-0aaf9fc41e5e-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/63305654-ad8c-4ef1-8e00-0b483f98ec88-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/65260fa8-d2a5-43cb-a9f3-a25590dbc4bc-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/670aebc5-9202-42e7-adec-437cb59425f8-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/673f16a5-bea2-4fbe-82f2-22dffffdc89c-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/6f23e553-0ffa-4005-b493-262397ec816c-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/79ce9cb8-482d-445a-bac5-b84fb8155ace-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/80d44166-9803-43fe-a0e2-c27bbb8c09e3-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/834dc98d-0c3e-4453-ae9b-5efb6f988bf3-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/9c752524-6637-4049-a58d-17026040f4a5-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/a34d8289-5a8f-44f5-877a-c65b6e6ff7ff-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/a8a16408-127c-49eb-807d-d5af4969f594-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/b2e5de29-505f-411f-82dc-efa5104dc0dd-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/b38a34ed-2503-4c21-8101-49b2dee35101-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/b41f5f28-6fea-43f7-9f96-8b416adce83b-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/b5a94be8-ca31-4c70-bd29-98ccd7e69dc6-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/c9673da9-c3ad-4fbc-9c4c-42e4825a5110-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/d9e13915-f8d2-422d-87e7-9cae5f1aa7f3-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/dae0715a-1a0a-4f12-9528-916a83f42028-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/de618f1b-006c-4d07-a594-07cf486e61a8-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/df66d755-315a-430a-bf92-5c9637c98113-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/f0226a63-721f-40c6-8081-08e7a2529fe5-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/f09637db-fd0b-422f-b115-1f5bc0fc57e7-attachment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/26697f40c60410b6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/6e328eff02a1f4e.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/71af5cba90e54260.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/8dc7eb9e317d02af.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/d471a9ab1e5c97aa.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/de649ec010adba5e.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/e31444d45fe889d4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/eacbdb6adf315028.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/attachments/ed269dc8260e5690.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/behaviors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/data/behaviors.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/behaviors.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/data/behaviors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/categories.csv" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/data/categories.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/data/categories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/packages.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/data/packages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/suites.csv" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/data/suites.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/suites.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/data/suites.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/2a3d63162b7e84dd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/348daaafba457355.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/398c50d7586ba8b2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/49c475c0f88f4261.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/6dd8dba9815dc0c3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/9f4d6c73d2289e1f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/a566c68d6c49b20d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/ba944c34faf2a162.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/c1526fbdb8bf82a0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/d38d365096ae7cc4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/da109f9cc4a2c8d5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/dc65a62fa06ac562.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/test-cases/f5a721100fc9561b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/data/timeline.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/data/timeline.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/export/influxDbData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/export/influxDbData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/export/prometheusData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/export/prometheusData.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/history/categories-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/history/categories-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/history/duration-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/history/duration-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/history/history-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/history/history-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/history/history.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/history/history.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/history/retry-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/history/retry-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/behaviors.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/behaviors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/categories-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/categories-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/categories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/duration-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/duration-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/duration.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/duration.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/history-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/history-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/retry-trend.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/retry-trend.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/severity.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/severity.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/status-chart.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/status-chart.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/suites.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/suites.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports_html/widgets/summary.json" beforeDir="false" afterPath="$PROJECT_DIR$/reports_html/widgets/summary.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_index.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;internet-snake&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:internet-snake/student_interface_test.git&quot;,
+    &quot;accountId&quot;: &quot;e675bbae-e815-4969-a75a-ef8f18899ae3&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3EQYfPnWwymbfbsS3nP4qMhviLf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python 测试.Python 测试 (test_student_task.py 内).executor": "Run",
+    "Python 测试.tests.test_index.TestStudentLogin 的 Python 测试.executor": "Run",
+    "Python 测试.tests.test_index.TestStudentLogin.test_student_login 的 Python 测试.executor": "Run",
+    "Python 测试.tests.test_student_login.TestStudentLogin 的 Python 测试.executor": "Run",
+    "Python 测试.tests.test_student_login.TestStudentLogin.test_student_login 的 Python 测试.executor": "Run",
+    "Python 测试.tests.test_student_logout.TestStudentLogin 的 Python 测试.executor": "Run",
+    "Python 测试.tests.test_student_task.TestIndex 的 Python 测试.executor": "Run",
+    "Python 测试.tests.test_studentlogin.TestStudentLogin.test_student_login 的 Python 测试.executor": "Run",
+    "Python.run_test.executor": "Run",
+    "Python.yaml_util.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\download\Software_Testing\Test1\student_test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.run_test">
+    <configuration name="run_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="student_test" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests.test_index.TestStudentLogin 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="student_test" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_index.TestStudentLogin&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests.test_index.TestStudentLogin.test_student_login 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="student_test" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_index.TestStudentLogin.test_student_login&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests.test_student_logout.TestStudentLogin 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="student_test" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_student_logout.TestStudentLogin&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests.test_student_task.TestIndex 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="student_test" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_student_task.TestIndex&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run_test" />
+        <item itemvalue="Python 测试.tests.test_student_task.TestIndex 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.test_index.TestStudentLogin.test_student_login 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.test_index.TestStudentLogin 的 Python 测试" />
+        <item itemvalue="Python 测试.tests.test_student_logout.TestStudentLogin 的 Python 测试" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-024ed6589d45-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.23567.174" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="9d0c3b75-0ef9-4300-87e6-3145cdfc15d7" name="更改" comment="" />
+      <created>1780112362948</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780112362948</updated>
+      <workItem from="1780112364003" duration="1491000" />
+      <workItem from="1780116933305" duration="26816000" />
+    </task>
+    <task id="LOCAL-00001" summary="第一次提交">
+      <option name="closed" value="true" />
+      <created>1780112535435</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1780112535435</updated>
+    </task>
+    <task id="LOCAL-00002" summary="学生登录接口测试完成">
+      <option name="closed" value="true" />
+      <created>1780143318772</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780143318772</updated>
+    </task>
+    <task id="LOCAL-00003" summary="allure报告与数据">
+      <option name="closed" value="true" />
+      <created>1780143377611</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780143377611</updated>
+    </task>
+    <task id="LOCAL-00004" summary="考试首页与注册测试完成">
+      <option name="closed" value="true" />
+      <created>1780198577138</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780198577138</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="第一次提交" />
+    <MESSAGE value="学生登录接口测试完成" />
+    <MESSAGE value="allure报告与数据" />
+    <MESSAGE value="考试首页与注册测试完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="考试首页与注册测试完成" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/student_test$run_test.coverage" NAME="run_test 覆盖结果" MODIFIED="1780209377761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/student_test$.coverage" NAME=" 覆盖结果" MODIFIED="1780204867494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/student_test$yaml_util.coverage" NAME="yaml_util 覆盖结果" MODIFIED="1780120677469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+  </component>
+</project>

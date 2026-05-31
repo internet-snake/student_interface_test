@@ -1,0 +1,10 @@
+- # 学生登出接口测试数据
+  feature: 登出模块
+  story: 学生登出接口
+  title: 成功登出用例
+  request:
+    method: POST
+    url: http://localhost:8000/api/user/logout
+  validate:
+    code: 1
+    message: 成功

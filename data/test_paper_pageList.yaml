@@ -1,0 +1,82 @@
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 成功获取试卷分页列表
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      subjectId: 1
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+    total: 1
+    list:
+      - id: 1
+        name: "一年级语文单元测试"
+        questionCount: 2
+        score: 100
+        subjectId: 1
+        subjectName: "语文"
+        paperType: 1
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 获取试卷分页列表-无数据(时段试卷)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 4
+      subjectId: 1
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+    total: 0
+    list: []
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 获取试卷分页列表-无数据(任务试卷)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 6
+      subjectId: 1
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+    total: 0
+    list: []
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 获取试卷分页列表-无数据(其他学科)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      subjectId: 2
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+    total: 0
+    list: []
