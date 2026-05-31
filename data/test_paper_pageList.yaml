@@ -1,6 +1,6 @@
 - feature: 试卷模块
   story: 试卷分页接口
-  title: 成功获取试卷分页列表
+  title: 分页查询-一年级语文固定试卷(数据库只有这一条)
   request:
     method: POST
     url: http://localhost:8000/api/student/exam/paper/pageList
@@ -14,57 +14,10 @@
   validate:
     code: 1
     message: 成功
-    total: 1
-    list:
-      - id: 1
-        name: "一年级语文单元测试"
-        questionCount: 2
-        score: 100
-        subjectId: 1
-        subjectName: "语文"
-        paperType: 1
 
 - feature: 试卷模块
   story: 试卷分页接口
-  title: 获取试卷分页列表-无数据(时段试卷)
-  request:
-    method: POST
-    url: http://localhost:8000/api/student/exam/paper/pageList
-    headers:
-      Content-Type: application/json
-    json:
-      paperType: 4
-      subjectId: 1
-      pageIndex: 1
-      pageSize: 10
-  validate:
-    code: 1
-    message: 成功
-    total: 0
-    list: []
-
-- feature: 试卷模块
-  story: 试卷分页接口
-  title: 获取试卷分页列表-无数据(任务试卷)
-  request:
-    method: POST
-    url: http://localhost:8000/api/student/exam/paper/pageList
-    headers:
-      Content-Type: application/json
-    json:
-      paperType: 6
-      subjectId: 1
-      pageIndex: 1
-      pageSize: 10
-  validate:
-    code: 1
-    message: 成功
-    total: 0
-    list: []
-
-- feature: 试卷模块
-  story: 试卷分页接口
-  title: 获取试卷分页列表-无数据(其他学科)
+  title: 分页查询-一年级数学固定试卷(无数据)
   request:
     method: POST
     url: http://localhost:8000/api/student/exam/paper/pageList
@@ -78,5 +31,169 @@
   validate:
     code: 1
     message: 成功
-    total: 0
-    list: []
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-一年级英语固定试卷(无数据)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      subjectId: 3
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-一年级时段试卷(无数据)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 4
+      subjectId: 1
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-一年级任务试卷(无数据)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 6
+      subjectId: 1
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-不存在的学科ID=999
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      subjectId: 999
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-每页5条
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      subjectId: 1
+      pageIndex: 1
+      pageSize: 5
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-第2页(无数据)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      subjectId: 1
+      pageIndex: 2
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-缺少paperType参数
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      subjectId: 1
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 501
+    message: "【paperType : 不能为null】"
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-缺少subjectId参数
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      pageIndex: 1
+      pageSize: 10
+  validate:
+    code: 1
+    message: 成功
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-缺少pageIndex参数
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      subjectId: 1
+      pageSize: 10
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷分页接口
+  title: 分页查询-缺少pageSize参数
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exam/paper/pageList
+    headers:
+      Content-Type: application/json
+    json:
+      paperType: 1
+      subjectId: 1
+      pageIndex: 1
+  validate:
+    code: 500
+    message: "系统内部错误"

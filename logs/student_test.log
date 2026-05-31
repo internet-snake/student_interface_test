@@ -1,129 +1,285 @@
-2026-05-31 14:36:18,884 - test_student_login - INFO - ===============================开始执行答卷查询测试================================================
-2026-05-31 14:36:18,889 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
-2026-05-31 14:36:18,908 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:18,909 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:18,915 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exampaper/answer/read/1 HTTP/1.1" 200 None
-2026-05-31 14:36:18,915 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
-2026-05-31 14:36:18,915 - test_student_login - ERROR - 断言失败: 返回的code错误，上下文: {'实际code': 500, '期望code': 1}
-2026-05-31 14:36:19,051 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,051 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,059 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exampaper/answer/read/99999 HTTP/1.1" 200 None
-2026-05-31 14:36:19,060 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
-2026-05-31 14:36:19,060 - test_student_login - INFO - 查询不存在的答卷
-2026-05-31 14:36:19,063 - test_student_login - INFO - ================================答卷查询测试完成================================================
-2026-05-31 14:36:19,065 - test_student_login - INFO - ===============================开始执行考试首页测试================================================
-2026-05-31 14:36:19,080 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,081 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,089 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/dashboard/index HTTP/1.1" 200 None
-2026-05-31 14:36:19,091 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'fixedPaper': [{'id': 1, 'name': '一年级语文单元测试', 'limitStartTime': None, 'limitEndTime': None}], 'timeLimitPaper': [], 'pushPaper': None}}
-2026-05-31 14:36:19,091 - test_student_login - INFO - 成功进入首页
-2026-05-31 14:36:19,092 - test_student_login - INFO - ================================考试首页测试完成================================================
-2026-05-31 14:36:19,094 - test_student_login - INFO - ===============================开始执行试卷分页测试================================================
-2026-05-31 14:36:19,182 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,182 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,182 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 1, 'pageIndex': 1, 'pageSize': 10}
-2026-05-31 14:36:19,197 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
-2026-05-31 14:36:19,197 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 1, 'list': [{'id': 1, 'name': '一年级语文单元测试', 'questionCount': 2, 'score': 10000, 'createTime': '2026-05-30 14:41:43', 'createUser': 2, 'subjectId': 1, 'subjectName': None, 'paperType': 1, 'frameTextContentId': 1}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 1, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1}}
-2026-05-31 14:36:19,198 - test_student_login - INFO - 成功获取试卷分页列表
-2026-05-31 14:36:19,292 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,293 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,293 - test_student_login - INFO - 数据为:{'paperType': 4, 'subjectId': 1, 'pageIndex': 1, 'pageSize': 10}
-2026-05-31 14:36:19,307 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
-2026-05-31 14:36:19,308 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
-2026-05-31 14:36:19,309 - test_student_login - INFO - 获取试卷分页列表-无数据(时段试卷)
-2026-05-31 14:36:19,404 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,405 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,405 - test_student_login - INFO - 数据为:{'paperType': 6, 'subjectId': 1, 'pageIndex': 1, 'pageSize': 10}
-2026-05-31 14:36:19,451 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
-2026-05-31 14:36:19,452 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
-2026-05-31 14:36:19,452 - test_student_login - INFO - 获取试卷分页列表-无数据(任务试卷)
-2026-05-31 14:36:19,474 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,475 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,475 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 2, 'pageIndex': 1, 'pageSize': 10}
-2026-05-31 14:36:19,484 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
-2026-05-31 14:36:19,487 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
-2026-05-31 14:36:19,487 - test_student_login - INFO - 获取试卷分页列表-无数据(其他学科)
-2026-05-31 14:36:19,488 - test_student_login - INFO - ================================试卷分页测试完成================================================
-2026-05-31 14:36:19,494 - test_student_login - INFO - ===============================开始执行试卷查询测试================================================
-2026-05-31 14:36:19,545 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,546 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,602 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exam/paper/select/1 HTTP/1.1" 200 None
-2026-05-31 14:36:19,602 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
-2026-05-31 14:36:19,604 - test_student_login - ERROR - 断言失败: 返回的code错误，上下文: {'实际code': 500, '期望code': 1}
-2026-05-31 14:36:19,656 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,657 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,747 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exam/paper/select/99999 HTTP/1.1" 200 None
-2026-05-31 14:36:19,748 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
-2026-05-31 14:36:19,748 - test_student_login - INFO - 查询不存在的试卷
-2026-05-31 14:36:19,750 - test_student_login - INFO - ================================试卷查询测试完成================================================
-2026-05-31 14:36:19,753 - test_student_login - INFO - ===============================开始执行试卷提交测试================================================
-2026-05-31 14:36:19,803 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,804 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,804 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 14, 'answerItems': [{'questionId': 1, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
-2026-05-31 14:36:19,870 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
-2026-05-31 14:36:19,871 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
-2026-05-31 14:36:19,871 - test_student_login - ERROR - 断言失败: 返回的code错误，上下文: {'实际code': 500, '期望code': 1}
-2026-05-31 14:36:19,899 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,900 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,900 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 10, 'answerItems': [], 'id': 1}
-2026-05-31 14:36:19,911 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
-2026-05-31 14:36:19,912 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
-2026-05-31 14:36:19,912 - test_student_login - ERROR - 断言失败: 返回的code错误，上下文: {'实际code': 500, '期望code': 1}
-2026-05-31 14:36:19,936 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:19,936 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:19,936 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 20, 'answerItems': [{'questionId': 1, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}, {'questionId': 2, 'content': None, 'contentArray': ['明'], 'completed': True, 'itemOrder': 2}], 'id': 1}
-2026-05-31 14:36:19,947 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
-2026-05-31 14:36:19,948 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
-2026-05-31 14:36:19,948 - test_student_login - ERROR - 断言失败: 返回的code错误，上下文: {'实际code': 500, '期望code': 1}
-2026-05-31 14:36:19,957 - test_student_login - INFO - ================================试卷提交测试完成================================================
-2026-05-31 14:36:19,961 - test_student_login - INFO - ===============================开始执行学生登录测试================================================
-2026-05-31 14:36:19,962 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '123456', 'remember': False}
-2026-05-31 14:36:20,043 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:20,044 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'id': None, 'userUuid': None, 'userName': 'student', 'password': None, 'realName': None, 'age': None, 'sex': None, 'birthDay': None, 'userLevel': None, 'phone': None, 'role': None, 'status': None, 'imagePath': 'https://www.mindskip.net:9008/image/ba607a75-83ba-4530-8e23-660b72dc4953/头像.jpg', 'createTime': None, 'modifyTime': None, 'lastActiveTime': None, 'deleted': None, 'wxOpenId': None}}
-2026-05-31 14:36:20,044 - test_student_login - INFO - 成功登录用例
-2026-05-31 14:36:20,049 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '', 'remember': False}
-2026-05-31 14:36:20,268 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
-2026-05-31 14:36:20,268 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
-2026-05-31 14:36:20,268 - test_student_login - INFO - 无法登录用例1(空密码)
-2026-05-31 14:36:20,272 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '你好', 'remember': False}
-2026-05-31 14:36:20,298 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
-2026-05-31 14:36:20,299 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
-2026-05-31 14:36:20,299 - test_student_login - INFO - 无法登录用例2(中文密码)
-2026-05-31 14:36:20,305 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '1234567', 'remember': False}
-2026-05-31 14:36:20,332 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
-2026-05-31 14:36:20,333 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
-2026-05-31 14:36:20,333 - test_student_login - INFO - 无法登录用例3(过长密码)
-2026-05-31 14:36:20,336 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '', 'remember': False}
-2026-05-31 14:36:20,362 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
-2026-05-31 14:36:20,363 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
-2026-05-31 14:36:20,363 - test_student_login - INFO - 无法登录用例4(过短密码)
-2026-05-31 14:36:20,370 - test_student_login - INFO - 数据为:{'userName': 'stu', 'password': '123456', 'remember': False}
-2026-05-31 14:36:20,382 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
-2026-05-31 14:36:20,383 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
-2026-05-31 14:36:20,383 - test_student_login - INFO - 无法登录用例5(账号错误)
-2026-05-31 14:36:20,388 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '123459', 'remember': False}
-2026-05-31 14:36:20,397 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
-2026-05-31 14:36:20,397 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
-2026-05-31 14:36:20,397 - test_student_login - INFO - 无法登录用例6(密码错误)
-2026-05-31 14:36:20,398 - test_student_login - INFO - ==================================学生登录测试完成================================================
-2026-05-31 14:36:20,415 - test_student_login - INFO - ===============================开始执行学生登出测试================================================
-2026-05-31 14:36:20,441 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:20,441 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:20,469 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/logout HTTP/1.1" 200 63
-2026-05-31 14:36:20,470 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': None}
-2026-05-31 14:36:20,470 - test_student_login - INFO - 成功登出用例
-2026-05-31 14:36:20,472 - test_student_login - INFO - ================================学生登出测试完成================================================
-2026-05-31 14:36:20,486 - test_student_login - INFO - ===============================开始执行学生任务测试================================================
-2026-05-31 14:36:20,547 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:20,548 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:20,702 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/dashboard/task HTTP/1.1" 200 None
-2026-05-31 14:36:20,704 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': [{'id': 1, 'title': '周末作业', 'paperItems': [{'examPaperId': None, 'examPaperName': None, 'examPaperAnswerId': None, 'status': None}]}, {'id': 2, 'title': '寒假作业', 'paperItems': [{'examPaperId': None, 'examPaperName': None, 'examPaperAnswerId': None, 'status': None}]}]}
-2026-05-31 14:36:20,704 - test_student_login - INFO - 成功获取任务列表（返回null试卷信息）
-2026-05-31 14:36:20,707 - test_student_login - INFO - ================================学生任务测试完成================================================
-2026-05-31 14:36:20,711 - test_student_login - INFO - ===============================开始执行学科列表测试================================================
-2026-05-31 14:36:20,729 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-2026-05-31 14:36:20,730 - test_student_login - INFO - 前置登录成功
-2026-05-31 14:36:20,804 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/education/subject/list HTTP/1.1" 200 None
-2026-05-31 14:36:20,805 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': [{'id': '1', 'name': '语文'}, {'id': '2', 'name': '数学'}]}
-2026-05-31 14:36:20,805 - test_student_login - INFO - 成功获取学科列表
-2026-05-31 14:36:20,807 - test_student_login - INFO - ================================学科列表测试完成================================================
+2026-05-31 16:21:26,391 - test_student_login - INFO - ===============================开始执行答卷查询测试================================================
+2026-05-31 16:21:26,395 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:8000
+2026-05-31 16:21:26,410 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,410 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,414 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exampaper/answer/read/1 HTTP/1.1" 200 None
+2026-05-31 16:21:26,414 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,414 - test_student_login - INFO - 查询答卷-ID=1(数据库有记录但无关联题目答案,返回系统错误)
+2026-05-31 16:21:26,425 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,425 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,428 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exampaper/answer/read/999 HTTP/1.1" 200 None
+2026-05-31 16:21:26,428 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,428 - test_student_login - INFO - 查询不存在的答卷-ID=999
+2026-05-31 16:21:26,436 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,437 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,440 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exampaper/answer/read/0 HTTP/1.1" 200 None
+2026-05-31 16:21:26,440 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,440 - test_student_login - INFO - 查询答卷-ID=0
+2026-05-31 16:21:26,449 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,450 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,452 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exampaper/answer/read/-1 HTTP/1.1" 200 None
+2026-05-31 16:21:26,452 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,452 - test_student_login - INFO - 查询答卷-ID为负数
+2026-05-31 16:21:26,454 - test_student_login - INFO - ================================答卷查询测试完成================================================
+2026-05-31 16:21:26,457 - test_student_login - INFO - ===============================开始执行考试首页测试================================================
+2026-05-31 16:21:26,465 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,466 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,471 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/dashboard/index HTTP/1.1" 200 None
+2026-05-31 16:21:26,471 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'fixedPaper': [{'id': 1, 'name': '一年级语文单元测试', 'limitStartTime': None, 'limitEndTime': None}], 'timeLimitPaper': [], 'pushPaper': None}}
+2026-05-31 16:21:26,471 - test_student_login - INFO - 获取首页-有固定试卷(一年级语文单元测试)
+2026-05-31 16:21:26,473 - test_student_login - INFO - ================================考试首页测试完成================================================
+2026-05-31 16:21:26,475 - test_student_login - INFO - ===============================开始执行试卷分页测试================================================
+2026-05-31 16:21:26,481 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,482 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,482 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 1, 'pageIndex': 1, 'pageSize': 10}
+2026-05-31 16:21:26,503 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,503 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 1, 'list': [{'id': 1, 'name': '一年级语文单元测试', 'questionCount': 2, 'score': 10000, 'createTime': '2026-05-30 14:41:43', 'createUser': 2, 'subjectId': 1, 'subjectName': None, 'paperType': 1, 'frameTextContentId': 1}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 1, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1}}
+2026-05-31 16:21:26,503 - test_student_login - INFO - 分页查询-一年级语文固定试卷(数据库只有这一条)
+2026-05-31 16:21:26,512 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,513 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,513 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 2, 'pageIndex': 1, 'pageSize': 10}
+2026-05-31 16:21:26,517 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,517 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
+2026-05-31 16:21:26,517 - test_student_login - INFO - 分页查询-一年级数学固定试卷(无数据)
+2026-05-31 16:21:26,526 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,526 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,526 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 3, 'pageIndex': 1, 'pageSize': 10}
+2026-05-31 16:21:26,530 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,531 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
+2026-05-31 16:21:26,531 - test_student_login - INFO - 分页查询-一年级英语固定试卷(无数据)
+2026-05-31 16:21:26,540 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,541 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,541 - test_student_login - INFO - 数据为:{'paperType': 4, 'subjectId': 1, 'pageIndex': 1, 'pageSize': 10}
+2026-05-31 16:21:26,545 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,545 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
+2026-05-31 16:21:26,545 - test_student_login - INFO - 分页查询-一年级时段试卷(无数据)
+2026-05-31 16:21:26,555 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,556 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,556 - test_student_login - INFO - 数据为:{'paperType': 6, 'subjectId': 1, 'pageIndex': 1, 'pageSize': 10}
+2026-05-31 16:21:26,559 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,559 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
+2026-05-31 16:21:26,559 - test_student_login - INFO - 分页查询-一年级任务试卷(无数据)
+2026-05-31 16:21:26,569 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,570 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,570 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 999, 'pageIndex': 1, 'pageSize': 10}
+2026-05-31 16:21:26,574 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,574 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
+2026-05-31 16:21:26,574 - test_student_login - INFO - 分页查询-不存在的学科ID=999
+2026-05-31 16:21:26,584 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,585 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,585 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 1, 'pageIndex': 1, 'pageSize': 5}
+2026-05-31 16:21:26,589 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,590 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 1, 'list': [{'id': 1, 'name': '一年级语文单元测试', 'questionCount': 2, 'score': 10000, 'createTime': '2026-05-30 14:41:43', 'createUser': 2, 'subjectId': 1, 'subjectName': None, 'paperType': 1, 'frameTextContentId': 1}], 'pageNum': 1, 'pageSize': 5, 'size': 1, 'startRow': 1, 'endRow': 1, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1}}
+2026-05-31 16:21:26,590 - test_student_login - INFO - 分页查询-每页5条
+2026-05-31 16:21:26,599 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,600 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,600 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 1, 'pageIndex': 2, 'pageSize': 10}
+2026-05-31 16:21:26,605 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,605 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 1, 'list': [{'id': 1, 'name': '一年级语文单元测试', 'questionCount': 2, 'score': 10000, 'createTime': '2026-05-30 14:41:43', 'createUser': 2, 'subjectId': 1, 'subjectName': None, 'paperType': 1, 'frameTextContentId': 1}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 1, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1}}
+2026-05-31 16:21:26,605 - test_student_login - INFO - 分页查询-第2页(无数据)
+2026-05-31 16:21:26,615 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,615 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,615 - test_student_login - INFO - 数据为:{'subjectId': 1, 'pageIndex': 1, 'pageSize': 10}
+2026-05-31 16:21:26,621 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,621 - test_student_login - INFO - 响应结果{'code': 501, 'message': '【paperType : 不能为null】', 'response': None}
+2026-05-31 16:21:26,621 - test_student_login - INFO - 分页查询-缺少paperType参数
+2026-05-31 16:21:26,631 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,631 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,631 - test_student_login - INFO - 数据为:{'paperType': 1, 'pageIndex': 1, 'pageSize': 10}
+2026-05-31 16:21:26,676 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,677 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'total': 1, 'list': [{'id': 1, 'name': '一年级语文单元测试', 'questionCount': 2, 'score': 10000, 'createTime': '2026-05-30 14:41:43', 'createUser': 2, 'subjectId': 1, 'subjectName': None, 'paperType': 1, 'frameTextContentId': 1}], 'pageNum': 1, 'pageSize': 10, 'size': 1, 'startRow': 1, 'endRow': 1, 'pages': 1, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [1], 'navigateFirstPage': 1, 'navigateLastPage': 1}}
+2026-05-31 16:21:26,677 - test_student_login - INFO - 分页查询-缺少subjectId参数
+2026-05-31 16:21:26,703 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,704 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,704 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 1, 'pageSize': 10}
+2026-05-31 16:21:26,804 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,804 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,805 - test_student_login - INFO - 分页查询-缺少pageIndex参数
+2026-05-31 16:21:26,818 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,818 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,818 - test_student_login - INFO - 数据为:{'paperType': 1, 'subjectId': 1, 'pageIndex': 1}
+2026-05-31 16:21:26,821 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+2026-05-31 16:21:26,822 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,822 - test_student_login - INFO - 分页查询-缺少pageSize参数
+2026-05-31 16:21:26,823 - test_student_login - INFO - ================================试卷分页测试完成================================================
+2026-05-31 16:21:26,825 - test_student_login - INFO - ===============================开始执行试卷查询测试================================================
+2026-05-31 16:21:26,833 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,833 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,839 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exam/paper/select/1 HTTP/1.1" 200 None
+2026-05-31 16:21:26,841 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,841 - test_student_login - INFO - 成功查询试卷-ID=1(一年级语文单元测试,共2题)
+2026-05-31 16:21:26,852 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,852 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,855 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exam/paper/select/999 HTTP/1.1" 200 None
+2026-05-31 16:21:26,856 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,856 - test_student_login - INFO - 查询不存在的试卷-ID=999
+2026-05-31 16:21:26,868 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,868 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,871 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exam/paper/select/0 HTTP/1.1" 200 None
+2026-05-31 16:21:26,872 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,872 - test_student_login - INFO - 查询试卷-ID=0
+2026-05-31 16:21:26,881 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,881 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,884 - urllib3.connectionpool - DEBUG - http://localhost:8000 "GET /api/student/exam/paper/select/-1 HTTP/1.1" 200 None
+2026-05-31 16:21:26,885 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,885 - test_student_login - INFO - 查询试卷-ID为负数
+2026-05-31 16:21:26,885 - test_student_login - INFO - ================================试卷查询测试完成================================================
+2026-05-31 16:21:26,888 - test_student_login - INFO - ===============================开始执行试卷提交测试================================================
+2026-05-31 16:21:26,896 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,896 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,896 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 14, 'answerItems': [{'questionId': 1, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:26,985 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:26,986 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:26,986 - test_student_login - INFO - 提交试卷-选择题答对(题目1,correct='A',答案'A')
+2026-05-31 16:21:26,999 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:26,999 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:26,999 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 20, 'answerItems': [{'questionId': 1, 'content': 'B', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,005 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,006 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,006 - test_student_login - INFO - 提交试卷-选择题答错(题目1,correct='A',答案'B')
+2026-05-31 16:21:27,016 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,016 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,017 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 30, 'answerItems': [{'questionId': 2, 'content': None, 'contentArray': ['明'], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,022 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,022 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,022 - test_student_login - INFO - 提交试卷-填空题答案正确(题目2,correct='明',答案'明')
+2026-05-31 16:21:27,032 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,032 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,032 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 30, 'answerItems': [{'questionId': 2, 'content': None, 'contentArray': ['暗'], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,037 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,038 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,038 - test_student_login - INFO - 提交试卷-填空题答案错误(题目2,correct='明',答案'暗')
+2026-05-31 16:21:27,047 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,047 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,047 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 5, 'answerItems': [{'questionId': 1, 'content': None, 'contentArray': [], 'completed': False, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,053 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,055 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,055 - test_student_login - INFO - 提交试卷-选择题未完成(题目1)
+2026-05-31 16:21:27,064 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,065 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,065 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 0, 'answerItems': [], 'id': 1}
+2026-05-31 16:21:27,074 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,075 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,075 - test_student_login - INFO - 提交试卷-空答案
+2026-05-31 16:21:27,085 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,086 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,086 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 60, 'answerItems': [{'questionId': 3, 'content': '2', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,092 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,092 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,092 - test_student_login - INFO - 提交试卷-简答题答案正确(题目3,correct='2')
+2026-05-31 16:21:27,101 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,102 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,102 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 60, 'answerItems': [{'questionId': 3, 'content': '3', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,108 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,108 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,108 - test_student_login - INFO - 提交试卷-简答题答案错误(题目3,correct='2',答案'3')
+2026-05-31 16:21:27,120 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,120 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,120 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 10, 'answerItems': [{'questionId': 1, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 999}
+2026-05-31 16:21:27,124 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,124 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,124 - test_student_login - INFO - 提交试卷-不存在的试卷ID=999
+2026-05-31 16:21:27,135 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,136 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,136 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 10, 'answerItems': [{'questionId': 999, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,143 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,143 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,143 - test_student_login - INFO - 提交试卷-不存在的题目ID=999
+2026-05-31 16:21:27,153 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,153 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,153 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 0, 'answerItems': [{'questionId': 1, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,158 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,159 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,159 - test_student_login - INFO - 提交试卷-耗时为0
+2026-05-31 16:21:27,168 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,169 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,169 - test_student_login - INFO - 数据为:{'doTime': 10, 'answerItems': [{'questionId': 1, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,173 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,173 - test_student_login - INFO - 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+2026-05-31 16:21:27,173 - test_student_login - INFO - 提交试卷-缺少questionId字段
+2026-05-31 16:21:27,184 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,184 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,184 - test_student_login - INFO - 数据为:{'questionId': None, 'answerItems': [{'questionId': 1, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+2026-05-31 16:21:27,187 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,188 - test_student_login - INFO - 响应结果{'code': 501, 'message': '【doTime : 不能为null】', 'response': None}
+2026-05-31 16:21:27,188 - test_student_login - INFO - 提交试卷-缺少doTime字段
+2026-05-31 16:21:27,197 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,198 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,198 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 10, 'id': 1}
+2026-05-31 16:21:27,200 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,201 - test_student_login - INFO - 响应结果{'code': 501, 'message': '【answerItems : 不能为null】', 'response': None}
+2026-05-31 16:21:27,201 - test_student_login - INFO - 提交试卷-缺少answerItems字段
+2026-05-31 16:21:27,210 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,210 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,210 - test_student_login - INFO - 数据为:{'questionId': None, 'doTime': 10, 'answerItems': [{'questionId': 1, 'content': 'A', 'contentArray': [], 'completed': True, 'itemOrder': 1}]}
+2026-05-31 16:21:27,213 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+2026-05-31 16:21:27,214 - test_student_login - INFO - 响应结果{'code': 501, 'message': '【id : 不能为null】', 'response': None}
+2026-05-31 16:21:27,214 - test_student_login - INFO - 提交试卷-缺少id字段
+2026-05-31 16:21:27,215 - test_student_login - INFO - ================================试卷提交测试完成================================================
+2026-05-31 16:21:27,216 - test_student_login - INFO - ===============================开始执行学生登录测试================================================
+2026-05-31 16:21:27,217 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '123456', 'remember': False}
+2026-05-31 16:21:27,493 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,493 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'id': None, 'userUuid': None, 'userName': 'student', 'password': None, 'realName': None, 'age': None, 'sex': None, 'birthDay': None, 'userLevel': None, 'phone': None, 'role': None, 'status': None, 'imagePath': 'https://www.mindskip.net:9008/image/ba607a75-83ba-4530-8e23-660b72dc4953/头像.jpg', 'createTime': None, 'modifyTime': None, 'lastActiveTime': None, 'deleted': None, 'wxOpenId': None}}
+2026-05-31 16:21:27,493 - test_student_login - INFO - 正常登录-学生账号student
+2026-05-31 16:21:27,497 - test_student_login - INFO - 数据为:{'userName': 'admin', 'password': '123456', 'remember': False}
+2026-05-31 16:21:27,519 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 194
+2026-05-31 16:21:27,519 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'id': None, 'userUuid': None, 'userName': 'admin', 'password': None, 'realName': None, 'age': None, 'sex': None, 'birthDay': None, 'userLevel': None, 'phone': None, 'role': None, 'status': None, 'imagePath': None, 'createTime': None, 'modifyTime': None, 'lastActiveTime': None, 'deleted': None, 'wxOpenId': None}}
+2026-05-31 16:21:27,520 - test_student_login - INFO - 正常登录-管理员账号admin
+2026-05-31 16:21:27,522 - test_student_login - INFO - 数据为:{'userName': 'student2', 'password': '123456', 'remember': False}
+2026-05-31 16:21:27,543 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 197
+2026-05-31 16:21:27,543 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'id': None, 'userUuid': None, 'userName': 'student2', 'password': None, 'realName': None, 'age': None, 'sex': None, 'birthDay': None, 'userLevel': None, 'phone': None, 'role': None, 'status': None, 'imagePath': None, 'createTime': None, 'modifyTime': None, 'lastActiveTime': None, 'deleted': None, 'wxOpenId': None}}
+2026-05-31 16:21:27,543 - test_student_login - INFO - 正常登录-学生账号student2
+2026-05-31 16:21:27,546 - test_student_login - INFO - 数据为:{'userName': 'nonexistent_user', 'password': '123456', 'remember': False}
+2026-05-31 16:21:27,548 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+2026-05-31 16:21:27,550 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+2026-05-31 16:21:27,550 - test_student_login - INFO - 登录失败-用户不存在
+2026-05-31 16:21:27,552 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': 'wrong_password', 'remember': False}
+2026-05-31 16:21:27,557 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+2026-05-31 16:21:27,558 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+2026-05-31 16:21:27,558 - test_student_login - INFO - 登录失败-密码错误
+2026-05-31 16:21:27,561 - test_student_login - INFO - 数据为:{'userName': '', 'password': '123456', 'remember': False}
+2026-05-31 16:21:27,564 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+2026-05-31 16:21:27,564 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+2026-05-31 16:21:27,564 - test_student_login - INFO - 登录失败-空用户名
+2026-05-31 16:21:27,568 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '', 'remember': False}
+2026-05-31 16:21:27,576 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+2026-05-31 16:21:27,576 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+2026-05-31 16:21:27,576 - test_student_login - INFO - 登录失败-空密码
+2026-05-31 16:21:27,581 - test_student_login - INFO - 数据为:{'password': '123456', 'remember': False}
+2026-05-31 16:21:27,585 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+2026-05-31 16:21:27,585 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+2026-05-31 16:21:27,585 - test_student_login - INFO - 登录失败-缺少用户名参数
+2026-05-31 16:21:27,588 - test_student_login - INFO - 数据为:{'userName': 'student', 'remember': False}
+2026-05-31 16:21:27,596 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+2026-05-31 16:21:27,596 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+2026-05-31 16:21:27,596 - test_student_login - INFO - 登录失败-缺少密码参数
+2026-05-31 16:21:27,649 - test_student_login - INFO - 数据为:{'userName': "student'; DROP TABLE users; --", 'password': '123456', 'remember': False}
+2026-05-31 16:21:27,659 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+2026-05-31 16:21:27,659 - test_student_login - INFO - 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+2026-05-31 16:21:27,659 - test_student_login - INFO - 登录失败-用户名包含特殊字符(SQL注入)
+2026-05-31 16:21:27,662 - test_student_login - INFO - 数据为:{'userName': 'student', 'password': '123456', 'remember': True}
+2026-05-31 16:21:27,670 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,670 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': {'id': None, 'userUuid': None, 'userName': 'student', 'password': None, 'realName': None, 'age': None, 'sex': None, 'birthDay': None, 'userLevel': None, 'phone': None, 'role': None, 'status': None, 'imagePath': 'https://www.mindskip.net:9008/image/ba607a75-83ba-4530-8e23-660b72dc4953/头像.jpg', 'createTime': None, 'modifyTime': None, 'lastActiveTime': None, 'deleted': None, 'wxOpenId': None}}
+2026-05-31 16:21:27,670 - test_student_login - INFO - 登录成功-记住登录状态
+2026-05-31 16:21:27,671 - test_student_login - INFO - ==================================学生登录测试完成================================================
+2026-05-31 16:21:27,673 - test_student_login - INFO - ===============================开始执行学生登出测试================================================
+2026-05-31 16:21:27,823 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,824 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,828 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/logout HTTP/1.1" 200 63
+2026-05-31 16:21:27,828 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': None}
+2026-05-31 16:21:27,828 - test_student_login - INFO - 正常登出-已登录用户
+2026-05-31 16:21:27,829 - test_student_login - INFO - ================================学生登出测试完成================================================
+2026-05-31 16:21:27,850 - test_student_login - INFO - ===============================开始执行学生任务测试================================================
+2026-05-31 16:21:27,872 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,872 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,880 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/dashboard/task HTTP/1.1" 200 None
+2026-05-31 16:21:27,880 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': [{'id': 1, 'title': '周末作业', 'paperItems': [{'examPaperId': None, 'examPaperName': None, 'examPaperAnswerId': None, 'status': None}]}, {'id': 2, 'title': '寒假作业', 'paperItems': [{'examPaperId': None, 'examPaperName': None, 'examPaperAnswerId': None, 'status': None}]}]}
+2026-05-31 16:21:27,880 - test_student_login - INFO - 获取任务列表-有任务(周末作业和寒假作业)
+2026-05-31 16:21:27,881 - test_student_login - INFO - ================================学生任务测试完成================================================
+2026-05-31 16:21:27,883 - test_student_login - INFO - ===============================开始执行学科列表测试================================================
+2026-05-31 16:21:27,890 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+2026-05-31 16:21:27,890 - test_student_login - INFO - 前置登录成功
+2026-05-31 16:21:27,896 - urllib3.connectionpool - DEBUG - http://localhost:8000 "POST /api/student/education/subject/list HTTP/1.1" 200 None
+2026-05-31 16:21:27,896 - test_student_login - INFO - 响应结果{'code': 1, 'message': '成功', 'response': [{'id': '1', 'name': '语文'}, {'id': '2', 'name': '数学'}]}
+2026-05-31 16:21:27,896 - test_student_login - INFO - 获取学科列表-成功(有一年级语数英三科)
+2026-05-31 16:21:27,898 - test_student_login - INFO - ================================学科列表测试完成================================================

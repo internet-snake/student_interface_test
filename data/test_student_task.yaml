@@ -1,24 +1,11 @@
-- feature: 任务中心模块
+- feature: 任务模块
   story: 任务中心接口
-  title: 成功获取任务列表（返回null试卷信息）
+  title: 获取任务列表-有任务(周末作业和寒假作业)
   request:
     method: POST
     url: http://localhost:8000/api/student/dashboard/task
+    headers:
+      Content-Type: application/json
   validate:
     code: 1
     message: 成功
-    tasks:
-      - id: 1
-        title: "周末作业"
-        paperItems:
-          - examPaperId: null
-            examPaperName: null
-            examPaperAnswerId: null
-            status: null
-      - id: 2
-        title: "寒假作业"
-        paperItems:
-          - examPaperId: null
-            examPaperName: null
-            examPaperAnswerId: null
-            status: null

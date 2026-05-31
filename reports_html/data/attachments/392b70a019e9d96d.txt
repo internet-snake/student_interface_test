@@ -1,7 +1,0 @@
-INFO     test_student_login:conftest.py:22 ===============================开始执行学生登出测试================================================
-DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
-INFO     test_student_login:test_student_logout.py:39 前置登录成功
-DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/logout HTTP/1.1" 200 63
-INFO     test_student_login:test_student_logout.py:46 响应结果{'code': 1, 'message': '成功', 'response': None}
-INFO     test_student_login:test_student_logout.py:60 成功登出用例
-INFO     test_student_login:conftest.py:24 ================================学生登出测试完成================================================

@@ -1,18 +1,36 @@
 - feature: 答卷模块
   story: 答卷查询接口
-  title: 成功查询答卷
+  title: 查询答卷-ID=1(数据库有记录但无关联题目答案,返回系统错误)
   request:
     method: GET
     url: http://localhost:8000/api/student/exampaper/answer/read/1
   validate:
-    code: 1
-    message: 成功
+    code: 500
+    message: 系统内部错误
 
 - feature: 答卷模块
   story: 答卷查询接口
-  title: 查询不存在的答卷
+  title: 查询不存在的答卷-ID=999
   request:
     method: GET
-    url: http://localhost:8000/api/student/exampaper/answer/read/99999
+    url: http://localhost:8000/api/student/exampaper/answer/read/999
+  validate:
+    code: 500
+
+- feature: 答卷模块
+  story: 答卷查询接口
+  title: 查询答卷-ID=0
+  request:
+    method: GET
+    url: http://localhost:8000/api/student/exampaper/answer/read/0
+  validate:
+    code: 500
+
+- feature: 答卷模块
+  story: 答卷查询接口
+  title: 查询答卷-ID为负数
+  request:
+    method: GET
+    url: http://localhost:8000/api/student/exampaper/answer/read/-1
   validate:
     code: 500

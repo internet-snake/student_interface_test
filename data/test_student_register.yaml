@@ -1,7 +1,36 @@
-- # 学生注册接口测试数据
-  feature: 注册模块
-  story: 学生注册接口
-  title: 成功注册用例
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-用户名已存在(student)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/user/register
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "student"
+      password: "123456"
+      userLevel: 1
+  validate:
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-用户名已存在(admin)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/user/register
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "admin"
+      password: "123456"
+      userLevel: 1
+  validate:
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-用户名已存在(student2)
   request:
     method: POST
     url: http://localhost:8000/api/student/user/register
@@ -12,53 +41,121 @@
       password: "123456"
       userLevel: 1
   validate:
-    code: 1
-    message: 成功
--
-  feature: 注册模块
-  story: 学生注册接口
-  title: 注册失败用例1(相同用户名)
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-用户名过短(1个字符)
   request:
     method: POST
     url: http://localhost:8000/api/student/user/register
     headers:
       Content-Type: application/json
     json:
-      userName: "student2"
+      userName: "a"
       password: "123456"
       userLevel: 1
   validate:
-    code: 2
-    message: 用户已存在
--
-  feature: 注册模块
-  story: 学生注册接口
-  title: 注册失败用例2(用户名为空)
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-密码为空
   request:
     method: POST
     url: http://localhost:8000/api/student/user/register
     headers:
       Content-Type: application/json
     json:
-      userName: ""
-      password: "123456"
-      userLevel: 1
-  validate:
-    code: 501
-    message: "【userName : 不能为空】"
-- # 学生登录接口测试数据
-  feature: 注册模块
-  story: 学生注册接口
-  title: 注册失败用例3(密码为空)
-  request:
-    method: POST
-    url: http://localhost:8000/api/student/user/register
-    headers:
-      Content-Type: application/json
-    json:
-      userName: "student3"
+      userName: "newstudent001"
       password: ""
       userLevel: 1
   validate:
-    code: 501
-    message: "【password : 不能为空】"
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-年级为0
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/user/register
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "newstudent002"
+      password: "123456"
+      userLevel: 0
+  validate:
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-年级超出范围(13)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/user/register
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "newstudent003"
+      password: "123456"
+      userLevel: 13
+  validate:
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-缺少用户名
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/user/register
+    headers:
+      Content-Type: application/json
+    json:
+      password: "123456"
+      userLevel: 1
+  validate:
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-缺少密码
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/user/register
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "newstudent004"
+      userLevel: 1
+  validate:
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-缺少年级
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/user/register
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "newstudent005"
+      password: "123456"
+  validate:
+    code: 0
+
+- feature: 用户模块
+  story: 注册接口
+  title: 注册失败-用户名包含空格
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/user/register
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "student with space"
+      password: "123456"
+      userLevel: 1
+  validate:
+    code: 0

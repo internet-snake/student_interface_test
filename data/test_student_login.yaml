@@ -1,7 +1,6 @@
-- # 学生登录接口测试数据1
-  feature: 登录模块
-  story: 学生登录接口
-  title: 成功登录用例
+- feature: 用户模块
+  story: 登录接口
+  title: 正常登录-学生账号student
   request:
     method: POST
     url: http://localhost:8000/api/user/login
@@ -14,90 +13,58 @@
   validate:
     code: 1
     message: 成功
-- # 学生登录接口测试数据2
-  feature: 登录模块
-  story: 学生登录接口
-  title: 无法登录用例1(空密码)
+
+- feature: 用户模块
+  story: 登录接口
+  title: 正常登录-管理员账号admin
   request:
     method: POST
     url: http://localhost:8000/api/user/login
     headers:
       Content-Type: application/json
     json:
-      userName: "student"
-      password: ""
+      userName: "admin"
+      password: "123456"
       remember: false
   validate:
-    code: 402
-    message: 用户名或密码错误
-- # 学生登录接口测试数据3
-  feature: 登录模块
-  story: 学生登录接口
-  title: 无法登录用例2(中文密码)
+    code: 1
+    message: 成功
+
+- feature: 用户模块
+  story: 登录接口
+  title: 正常登录-学生账号student2
   request:
     method: POST
     url: http://localhost:8000/api/user/login
     headers:
       Content-Type: application/json
     json:
-      userName: "student"
-      password: "你好"
+      userName: "student2"
+      password: "123456"
       remember: false
   validate:
-    code: 402
-    message: 用户名或密码错误
-- # 学生登录接口测试数据
-  feature: 登录模块
-  story: 学生登录接口
-  title: 无法登录用例3(过长密码)
+    code: 1
+    message: 成功
+
+- feature: 用户模块
+  story: 登录接口
+  title: 登录失败-用户不存在
   request:
     method: POST
     url: http://localhost:8000/api/user/login
     headers:
       Content-Type: application/json
     json:
-      userName: "student"
-      password: "1234567"
-      remember: false
-  validate:
-    code: 402
-    message: 用户名或密码错误
-- # 学生登录接口测试数据
-  feature: 登录模块
-  story: 学生登录接口
-  title: 无法登录用例4(过短密码)
-  request:
-    method: POST
-    url: http://localhost:8000/api/user/login
-    headers:
-      Content-Type: application/json
-    json:
-      userName: "student"
-      password: ""
-      remember: false
-  validate:
-    code: 402
-    message: 用户名或密码错误
-- # 学生登录接口测试数据
-  feature: 登录模块
-  story: 学生登录接口
-  title: 无法登录用例5(账号错误)
-  request:
-    method: POST
-    url: http://localhost:8000/api/user/login
-    headers:
-      Content-Type: application/json
-    json:
-      userName: "stu"
+      userName: "nonexistent_user"
       password: "123456"
       remember: false
   validate:
     code: 402
-    message: 用户名或密码错误
-- # 学生登录接口测试数据
-  feature: 登录模块
-  story: 学生登录接口
-  title: 无法登录用例6(密码错误)
+    message: "用户名或密码错误"
+
+- feature: 用户模块
+  story: 登录接口
+  title: 登录失败-密码错误
   request:
     method: POST
     url: http://localhost:8000/api/user/login
@@ -105,8 +72,100 @@
       Content-Type: application/json
     json:
       userName: "student"
-      password: "123459"
+      password: "wrong_password"
       remember: false
   validate:
     code: 402
-    message: 用户名或密码错误
+    message: "用户名或密码错误"
+
+- feature: 用户模块
+  story: 登录接口
+  title: 登录失败-空用户名
+  request:
+    method: POST
+    url: http://localhost:8000/api/user/login
+    headers:
+      Content-Type: application/json
+    json:
+      userName: ""
+      password: "123456"
+      remember: false
+  validate:
+    code: 402
+    message: "用户名或密码错误"
+
+- feature: 用户模块
+  story: 登录接口
+  title: 登录失败-空密码
+  request:
+    method: POST
+    url: http://localhost:8000/api/user/login
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "student"
+      password: ""
+      remember: false
+  validate:
+    code: 402
+    message: "用户名或密码错误"
+
+- feature: 用户模块
+  story: 登录接口
+  title: 登录失败-缺少用户名参数
+  request:
+    method: POST
+    url: http://localhost:8000/api/user/login
+    headers:
+      Content-Type: application/json
+    json:
+      password: "123456"
+      remember: false
+  validate:
+    code: 402
+
+- feature: 用户模块
+  story: 登录接口
+  title: 登录失败-缺少密码参数
+  request:
+    method: POST
+    url: http://localhost:8000/api/user/login
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "student"
+      remember: false
+  validate:
+    code: 402
+
+- feature: 用户模块
+  story: 登录接口
+  title: 登录失败-用户名包含特殊字符(SQL注入)
+  request:
+    method: POST
+    url: http://localhost:8000/api/user/login
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "student'; DROP TABLE users; --"
+      password: "123456"
+      remember: false
+  validate:
+    code: 402
+    message: "用户名或密码错误"
+
+- feature: 用户模块
+  story: 登录接口
+  title: 登录成功-记住登录状态
+  request:
+    method: POST
+    url: http://localhost:8000/api/user/login
+    headers:
+      Content-Type: application/json
+    json:
+      userName: "student"
+      password: "123456"
+      remember: true
+  validate:
+    code: 1
+    message: 成功

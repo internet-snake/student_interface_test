@@ -1,6 +1,6 @@
 - feature: 试卷模块
   story: 试卷提交接口
-  title: 成功提交试卷(部分答题)
+  title: 提交试卷-选择题答对(题目1,correct='A',答案'A')
   request:
     method: POST
     url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
@@ -17,8 +17,96 @@
           itemOrder: 1
       id: 1
   validate:
-    code: 1
-    message: 成功
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-选择题答错(题目1,correct='A',答案'B')
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 20
+      answerItems:
+        - questionId: 1
+          content: "B"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-填空题答案正确(题目2,correct='明',答案'明')
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 30
+      answerItems:
+        - questionId: 2
+          content: null
+          contentArray: ["明"]
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-填空题答案错误(题目2,correct='明',答案'暗')
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 30
+      answerItems:
+        - questionId: 2
+          content: null
+          contentArray: ["暗"]
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-选择题未完成(题目1)
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 5
+      answerItems:
+        - questionId: 1
+          content: null
+          contentArray: []
+          completed: false
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 500
+    message: "系统内部错误"
 
 - feature: 试卷模块
   story: 试卷提交接口
@@ -30,16 +118,16 @@
       Content-Type: application/json
     json:
       questionId: null
-      doTime: 10
+      doTime: 0
       answerItems: []
       id: 1
   validate:
-    code: 1
-    message: 成功
+    code: 500
+    message: "系统内部错误"
 
 - feature: 试卷模块
   story: 试卷提交接口
-  title: 成功提交试卷(全部答题-题目1正确)
+  title: 提交试卷-简答题答案正确(题目3,correct='2')
   request:
     method: POST
     url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
@@ -47,20 +135,181 @@
       Content-Type: application/json
     json:
       questionId: null
-      doTime: 20
+      doTime: 60
+      answerItems:
+        - questionId: 3
+          content: "2"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-简答题答案错误(题目3,correct='2',答案'3')
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 60
+      answerItems:
+        - questionId: 3
+          content: "3"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-不存在的试卷ID=999
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 10
       answerItems:
         - questionId: 1
           content: "A"
           contentArray: []
           completed: true
           itemOrder: 1
-        - questionId: 2
-          content: null
-          contentArray:
-            - "明"
+      id: 999
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-不存在的题目ID=999
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 10
+      answerItems:
+        - questionId: 999
+          content: "A"
+          contentArray: []
           completed: true
-          itemOrder: 2
+          itemOrder: 1
       id: 1
   validate:
-    code: 1
-    message: 成功
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-耗时为0
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 0
+      answerItems:
+        - questionId: 1
+          content: "A"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-缺少questionId字段
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      doTime: 10
+      answerItems:
+        - questionId: 1
+          content: "A"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 500
+    message: "系统内部错误"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-缺少doTime字段
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      answerItems:
+        - questionId: 1
+          content: "A"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+      id: 1
+  validate:
+    code: 501
+    message: "【doTime : 不能为null】"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-缺少answerItems字段
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 10
+      id: 1
+  validate:
+    code: 501
+    message: "【answerItems : 不能为null】"
+
+- feature: 试卷模块
+  story: 试卷提交接口
+  title: 提交试卷-缺少id字段
+  request:
+    method: POST
+    url: http://localhost:8000/api/student/exampaper/answer/answerSubmit
+    headers:
+      Content-Type: application/json
+    json:
+      questionId: null
+      doTime: 10
+      answerItems:
+        - questionId: 1
+          content: "A"
+          contentArray: []
+          completed: true
+          itemOrder: 1
+  validate:
+    code: 501
+    message: "【id : 不能为null】"

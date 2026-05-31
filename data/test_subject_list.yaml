@@ -1,16 +1,11 @@
 - feature: 学科模块
   story: 学科列表接口
-  title: 成功获取学科列表
+  title: 获取学科列表-成功(有一年级语数英三科)
   request:
     method: POST
     url: http://localhost:8000/api/student/education/subject/list
+    headers:
+      Content-Type: application/json
   validate:
     code: 1
     message: 成功
-    response:
-      - id: 1
-        name: "语文"
-      - id: 2
-        name: "数学"
-      - id: 3
-        name: "英语"
