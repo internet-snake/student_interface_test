@@ -1,0 +1,6 @@
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+INFO     test_student_login:test_paper_pageList.py:32 前置登录成功
+INFO     test_student_login:test_paper_pageList.py:39 数据为:{'subjectId': 1, 'pageIndex': 1, 'pageSize': 10}
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+INFO     test_student_login:test_paper_pageList.py:44 响应结果{'code': 501, 'message': '【paperType : 不能为null】', 'response': None}
+INFO     test_student_login:test_paper_pageList.py:57 分页查询-缺少paperType参数

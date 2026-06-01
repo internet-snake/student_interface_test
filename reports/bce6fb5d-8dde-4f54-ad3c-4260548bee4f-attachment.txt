@@ -1,0 +1,4 @@
+INFO     test_student_login:test_student_login.py:35 数据为:{'password': '123456', 'remember': False}
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+INFO     test_student_login:test_student_login.py:40 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+INFO     test_student_login:test_student_login.py:56 登录失败-缺少用户名参数

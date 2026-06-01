@@ -1,0 +1,6 @@
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+[32mINFO    [0m test_student_login:test_paper_pageList.py:32 前置登录成功
+[32mINFO    [0m test_student_login:test_paper_pageList.py:39 数据为:{'paperType': 1, 'subjectId': 2, 'pageIndex': 1, 'pageSize': 10}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/student/exam/paper/pageList HTTP/1.1" 200 None
+[32mINFO    [0m test_student_login:test_paper_pageList.py:44 响应结果{'code': 1, 'message': '成功', 'response': {'total': 0, 'list': [], 'pageNum': 1, 'pageSize': 10, 'size': 0, 'startRow': 0, 'endRow': 0, 'pages': 0, 'prePage': 0, 'nextPage': 0, 'isFirstPage': True, 'isLastPage': True, 'hasPreviousPage': False, 'hasNextPage': False, 'navigatePages': 8, 'navigatepageNums': [], 'navigateFirstPage': 0, 'navigateLastPage': 0}}
+[32mINFO    [0m test_student_login:test_paper_pageList.py:57 分页查询-一年级数学固定试卷(无数据)

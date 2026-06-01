@@ -1,0 +1,6 @@
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+INFO     test_student_login:test_paper_submit.py:33 前置登录成功
+INFO     test_student_login:test_paper_submit.py:40 数据为:{'questionId': None, 'doTime': 20, 'answerItems': [{'questionId': 1, 'content': 'B', 'contentArray': [], 'completed': True, 'itemOrder': 1}], 'id': 1}
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/student/exampaper/answer/answerSubmit HTTP/1.1" 200 None
+INFO     test_student_login:test_paper_submit.py:45 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+INFO     test_student_login:test_paper_submit.py:58 提交试卷-选择题答错(题目1,correct='A',答案'B')

@@ -1,0 +1,7 @@
+INFO     test_student_login:conftest.py:71 ===============================开始执行答卷查询测试================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:241 Starting new HTTP connection (1): localhost:8000
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+INFO     test_student_login:test_answer_read.py:32 前置登录成功
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "GET /api/student/exampaper/answer/read/1 HTTP/1.1" 200 None
+INFO     test_student_login:test_answer_read.py:46 响应结果{'code': 500, 'message': '系统内部错误', 'response': None}
+INFO     test_student_login:test_answer_read.py:59 查询答卷-ID=1(数据库有记录但无关联题目答案,返回系统错误)

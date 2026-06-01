@@ -1,0 +1,7 @@
+INFO     test_student_login:conftest.py:36 ===============================开始执行学生任务测试================================================
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+INFO     test_student_login:test_student_task.py:39 前置登录成功
+DEBUG    urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/student/dashboard/task HTTP/1.1" 200 None
+INFO     test_student_login:test_student_task.py:46 响应结果{'code': 1, 'message': '成功', 'response': [{'id': 1, 'title': '周末作业', 'paperItems': [{'examPaperId': None, 'examPaperName': None, 'examPaperAnswerId': None, 'status': None}]}, {'id': 2, 'title': '寒假作业', 'paperItems': [{'examPaperId': None, 'examPaperName': None, 'examPaperAnswerId': None, 'status': None}]}]}
+INFO     test_student_login:test_student_task.py:106 获取任务列表-有任务(周末作业和寒假作业)
+INFO     test_student_login:conftest.py:38 ================================学生任务测试完成================================================

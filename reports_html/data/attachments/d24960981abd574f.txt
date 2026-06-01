@@ -1,0 +1,7 @@
+[32mINFO    [0m test_student_login:conftest.py:29 ===============================开始执行考试首页测试================================================
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 274
+[32mINFO    [0m test_student_login:test_index.py:39 前置登录成功
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/student/dashboard/index HTTP/1.1" 200 None
+[32mINFO    [0m test_student_login:test_index.py:46 响应结果{'code': 1, 'message': '成功', 'response': {'fixedPaper': [{'id': 1, 'name': '一年级语文单元测试', 'limitStartTime': None, 'limitEndTime': None}], 'timeLimitPaper': [], 'pushPaper': None}}
+[32mINFO    [0m test_student_login:test_index.py:102 获取首页-有固定试卷(一年级语文单元测试)
+[32mINFO    [0m test_student_login:conftest.py:31 ================================考试首页测试完成================================================

@@ -1,0 +1,4 @@
+[32mINFO    [0m test_student_login:test_student_login.py:35 数据为:{'userName': 'student', 'password': 'wrong_password', 'remember': False}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 http://localhost:8000 "POST /api/user/login HTTP/1.1" 200 85
+[32mINFO    [0m test_student_login:test_student_login.py:40 响应结果{'code': 402, 'message': '用户名或密码错误', 'response': None}
+[32mINFO    [0m test_student_login:test_student_login.py:56 登录失败-密码错误

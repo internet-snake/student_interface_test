@@ -93,7 +93,63 @@ pytest --alluredir=./reports_html
 allure serve reports_html
 ```
 
-## 📚 学生端接口文档
+## Jenkins持续集成
+
+本项目支持通过Jenkins实现持续集成，采用本地执行方式进行测试任务的调度与管理。
+
+### 集成说明
+
+- **执行方式**: 本地执行
+- **构建工具**: Jenkins Pipeline
+- **测试报告**: Allure Report
+- **触发方式**: 手动触发 / 定时触发
+
+### 测试报告展示
+
+#### Allure测试报告
+
+<p align="center">
+  <img src="./images/allure-report.png" alt="Allure 测试报告" width="80%">
+</p>
+
+<p align="center"><em>图1: Allure测试报告示例</em></p>
+
+#### Jenkins构建视图
+
+<p align="center">
+  <img src="./images/jenkins-dashboard.png" alt="Jenkins 构建视图" width="80%">
+</p>
+
+<p align="center"><em>图2: Jenkins构建视图示例</em></p>
+
+### 使用步骤
+
+1. **创建Jenkins任务**
+   - 新建自由风格项目或Pipeline项目
+   - 配置源码管理（如Git）
+
+2. **配置构建环境**
+   - 确保Jenkins服务器已安装Python环境
+   - 安装项目依赖：`pip install -r requirements.txt`
+
+3. **配置构建步骤**
+   - 添加执行Shell步骤
+   - 运行测试命令：`pytest --alluredir=./reports_html`
+
+4. **配置Allure报告**
+   - 安装Allure Jenkins插件
+   - 配置构建后操作：Allure Report
+   - 指定报告路径：`reports_html`
+
+5. **执行构建**
+   - 手动触发构建或配置定时触发
+   - 查看构建历史和测试报告
+
+### 构建结果通知
+
+可配置邮件、钉钉或企业微信通知，及时获取测试执行结果。
+
+## �� 学生端接口文档
 
 ### 基础信息
 
