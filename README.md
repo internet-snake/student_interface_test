@@ -115,6 +115,14 @@ allure open ./reports_html
 allure serve ./reports
 ```
 
+### Allure报告展示
+
+<p align="center">
+  <img src="./docs/images/allure_report.png" alt="Allure测试报告" width="80%">
+</p>
+
+<p align="center"><em>图1: Allure测试报告示例</em></p>
+
 ## 📋 测试标记说明
 
 本项目使用pytest标记对测试用例进行分类：
@@ -435,6 +443,14 @@ markers =
 4. **配置Allure报告**
    - 构建后操作：Allure Report
    - 指定报告路径：`reports_html`
+
+### Jenkins构建视图
+
+<p align="center">
+  <img src="./docs/images/jenkins_build.png" alt="Jenkins构建视图" width="80%">
+</p>
+
+<p align="center"><em>图2: Jenkins构建视图示例</em></p>
 
 ## 📄 许可证
 

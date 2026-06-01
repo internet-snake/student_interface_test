@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d0c3b75-0ef9-4300-87e6-3145cdfc15d7" name="更改" comment="jenkins持续集成">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/allure-report.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/jenkins-dashboard.png" beforeDir="false" />
-    </list>
+    <list default="true" id="9d0c3b75-0ef9-4300-87e6-3145cdfc15d7" name="更改" comment="README.md优化" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +194,7 @@
       <workItem from="1780112364003" duration="1491000" />
       <workItem from="1780116933305" duration="30231000" />
       <workItem from="1780277963127" duration="2268000" />
-      <workItem from="1780280803701" duration="2284000" />
+      <workItem from="1780280803701" duration="2901000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <option name="closed" value="true" />
@@ -273,7 +268,31 @@
       <option name="project" value="LOCAL" />
       <updated>1780282956395</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="jenkins持续集成">
+      <option name="closed" value="true" />
+      <created>1780284139045</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1780284139045</updated>
+    </task>
+    <task id="LOCAL-00011" summary="jenkins持续集成">
+      <option name="closed" value="true" />
+      <created>1780284536178</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1780284536178</updated>
+    </task>
+    <task id="LOCAL-00012" summary="README.md优化">
+      <option name="closed" value="true" />
+      <created>1780284590220</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1780284590220</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +306,8 @@
     <MESSAGE value="全部测试接口完成" />
     <MESSAGE value="用例添加" />
     <MESSAGE value="jenkins持续集成" />
-    <option name="LAST_COMMIT_MESSAGE" value="jenkins持续集成" />
+    <MESSAGE value="README.md优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md优化" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/student_test$run_test.coverage" NAME="run_test 覆盖结果" MODIFIED="1780280806623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
