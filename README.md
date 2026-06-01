@@ -118,7 +118,7 @@ allure serve ./reports
 ### Allure报告展示
 
 <p align="center">
-  <img src="./docs/images/allure_report.png" alt="Allure测试报告" width="80%">
+  <img width="80%" alt="Snipaste_2026-06-01_11-07-37" src="https://github.com/user-attachments/assets/8b54cedf-5ddd-4d55-a1ef-fd822ec0d2ed" />
 </p>
 
 <p align="center"><em>图1: Allure测试报告示例</em></p>
@@ -447,7 +447,7 @@ markers =
 ### Jenkins构建视图
 
 <p align="center">
-  <img src="./docs/images/jenkins_build.png" alt="Jenkins构建视图" width="80%">
+  <img width="80%" alt="Snipaste_2026-06-01_11-35-57" src="https://github.com/user-attachments/assets/d15d1548-8bd0-4346-917e-7a7787dc86e1" />
 </p>
 
 <p align="center"><em>图2: Jenkins构建视图示例</em></p>
