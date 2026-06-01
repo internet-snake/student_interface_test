@@ -109,15 +109,16 @@ allure serve reports_html
 #### Allure测试报告
 
 <p align="center">
-  <img src="./images/allure-report.png" alt="Allure 测试报告" width="80%">
+  <img alt="allure-report" src="https://github.com/user-attachments/assets/5d4a8edc-95df-4b44-a0c6-6f26d79bf207" />
 </p>
 
 <p align="center"><em>图1: Allure测试报告示例</em></p>
 
 #### Jenkins构建视图
 
+
 <p align="center">
-  <img src="./images/jenkins-dashboard.png" alt="Jenkins 构建视图" width="80%">
+  <img width="80%" alt="jenkins-dashboard" src="https://github.com/user-attachments/assets/6a59e0f7-9f46-4b9d-897f-30e0988d609d" />
 </p>
 
 <p align="center"><em>图2: Jenkins构建视图示例</em></p>
