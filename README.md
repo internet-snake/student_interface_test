@@ -234,32 +234,7 @@ assert_log(
 
 ### 接口详情
 
-#### 1. 登录接口
-
-**接口地址**: `POST /api/user/login`
-
-**请求参数**:
-```json
-{
-    "userName": "student",
-    "password": "123456",
-    "remember": false
-}
-```
-
-**响应示例**:
-```json
-{
-    "code": 1,
-    "message": "成功",
-    "response": {
-        "userName": "student",
-        "imagePath": ""
-    }
-}
-```
-
-#### 2. 注册接口
+#### 1. 注册接口
 
 **接口地址**: `POST /api/student/user/register`
 
@@ -281,7 +256,7 @@ assert_log(
 }
 ```
 
-#### 3. 首页接口
+#### 2. 首页接口
 
 **接口地址**: `POST /api/student/dashboard/index`
 
